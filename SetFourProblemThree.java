@@ -1,7 +1,9 @@
 public class SetFourProblemThree {
     public static void main(String[] args){
         int sum = 0;
-       for (int num = 11111; num <= 99999; num ++)
+        int number = 0;
+        int posInt = 99999;
+       for (int num = 99999; num >= 10000; num --)
        {
         String digit = String.valueOf(num);
         for(int digits = 0; digits < 5; digits ++)
@@ -10,12 +12,18 @@ public class SetFourProblemThree {
         }
         if (num % sum == 0)
         {
-            //smallest = true;
-            System.out.println(num);
-            return;
+            if (posInt > num / sum)
+            {
+                posInt = num / sum;
+                number = num;
+            }
+            
         }
         sum = 0;
        }
+       
+       System.out.println("num: " + number);
+       System.out.println("smallest: " + posInt);
     }
     
 }
